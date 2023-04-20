@@ -15,11 +15,11 @@ public class Cliente {
 
     private String apellidos;
 
-    private Integer celular;
+    private Long celular;
 
     private String direccion;
 
-    @Column(name = "corre_electronico")
+    @Column(name = "correo_electronico")
     private String correElectronico;
 
     @OneToMany(mappedBy = "cliente")
@@ -49,11 +49,11 @@ public class Cliente {
         this.apellidos = apellidos;
     }
 
-    public Integer getCelular() {
+    public Long getCelular() {
         return celular;
     }
 
-    public void setCelular(Integer celular) {
+    public void setCelular(Long celular) {
         this.celular = celular;
     }
 
@@ -71,5 +71,13 @@ public class Cliente {
 
     public void setCorreElectronico(String correElectronico) {
         this.correElectronico = correElectronico;
+    }
+
+    public List<Compra> getCompras() {
+        return compras;
+    }
+
+    public void setCompras(List<Compra> compras) {
+        this.compras = compras;
     }
 }
