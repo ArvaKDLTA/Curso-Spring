@@ -18,8 +18,8 @@ public class JWTUtil {
                 .signWith(SignatureAlgorithm.HS256, KEY)
                 .compact();
     }
-/*
-    //manda a llamar a extractUsername y isTokenExpired para validar el token
+
+    //manda a llamar a extractUsername e isTokenExpired para validar el token
     public boolean validateToken (String token, UserDetails userDetails){
     return userDetails.getUsername().equals(extractUsername(token)) && !isTokenExpired(token);
     }
@@ -37,5 +37,5 @@ public class JWTUtil {
     //Se encarga de obtener todos los claims (objetos) del JWT
     private Claims getClaims(String token){
         return Jwts.parser().setSigningKey(KEY).parseClaimsJws(token).getBody();
-    }*/
+    }
 }
